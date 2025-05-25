@@ -22,6 +22,10 @@ public class Product {
     private String madeIn;
     private double price;
 
+    /*public Product() {
+        // Lombok이 안 먹힐 때 수동 fallback
+    }*/
+
     public Product(String name, String brand, String madeIn, double price) {
         this.name = name;
         this.brand = brand;
