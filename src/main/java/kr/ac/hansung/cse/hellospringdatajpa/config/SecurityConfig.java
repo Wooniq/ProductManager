@@ -24,6 +24,9 @@ public class SecurityConfig {
                         // 정적 자원 및 인증 관련 경로는 모두 허용
                         .requestMatchers("/register", "/login", "/css/**").permitAll()
 
+                        // 관리자 페이지는 ADMIN만 허용
+                        .requestMatchers("/admin/**").hasRole("ADMIN")
+
                         // 상품 조회(GET)은 USER와 ADMIN 허용
                         .requestMatchers(HttpMethod.GET, "/products/**").hasAnyRole("USER", "ADMIN")
 

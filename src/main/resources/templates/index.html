@@ -9,9 +9,14 @@
 
 <body>
 <div class="d-flex justify-content-end align-items-center gap-3 mt-3 me-3">
+  <!-- 관리자 여부 표시 -->
   <div sec:authorize="hasRole('ADMIN')">
     👤 Admin
+    <!-- 관리자 페이지 이동 버튼 -->
+    <a class="btn btn-outline-primary btn-sm ms-2" th:href="@{/admin/users}">관리자 페이지</a>
   </div>
+
+  <!-- 로그아웃 버튼 -->
   <form th:action="@{/logout}" method="post" class="m-0">
     <button type="submit" class="btn btn-outline-secondary btn-sm">Logout</button>
   </form>
