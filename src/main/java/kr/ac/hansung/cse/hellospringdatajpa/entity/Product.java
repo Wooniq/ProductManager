@@ -1,15 +1,13 @@
 package kr.ac.hansung.cse.hellospringdatajpa.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Getter
 @Setter
 @ToString
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "product")
 public class Product {
@@ -21,10 +19,6 @@ public class Product {
     private String brand;
     private String madeIn;
     private double price;
-
-    /*public Product() {
-        // Lombok이 안 먹힐 때 수동 fallback
-    }*/
 
     public Product(String name, String brand, String madeIn, double price) {
         this.name = name;
